@@ -11,7 +11,7 @@ def month_twelve_revenue(allocations):
     account_manager_churn_reduction = 0.05
     churn_reduction_per_csat = 0.15
 
-    for month in allocations:
+    for i, month in enumerate(allocations):
         # Extract current month allocation
         support = month[0]
         account_manager = month[1]
@@ -55,55 +55,10 @@ def month_twelve_revenue(allocations):
         )
         total_revenue = managed_revenue + unmanaged_revenue
 
+        # print("-------------------------------------")
+        # print(f"Month {i + 1}")
+        # print("Total customers: ", total_customer_count)
+        # print("Total revenue: ", total_revenue)
+        # print("-------------------------------------")
+
     return total_revenue
-
-
-# 121525.0
-# allocations = [
-#     [8, 3, 9],
-#     [10, 0, 10],
-#     [8, 4, 8],
-#     [8, 12, 0],
-#     [5, 10, 5],
-#     [5, 7, 8],
-#     [15, 1, 4],
-#     [11, 5, 4],
-#     [1, 2, 17],
-#     [3, 15, 2],
-#     [0, 0, 20],
-#     [6, 8, 6],
-# ]
-
-# 122475.0
-# allocations = [
-#     [6, 12, 2],
-#     [17, 1, 2],
-#     [12, 0, 8],
-#     [3, 13, 4],
-#     [15, 4, 1],
-#     [10, 5, 5],
-#     [14, 1, 5],
-#     [8, 3, 9],
-#     [9, 1, 10],
-#     [20, 0, 0],
-#     [2, 15, 3],
-#     [2, 2, 16],
-# ]
-
-# 128800.0
-# allocations = [
-#     [7, 1, 12],
-#     [16, 1, 3],
-#     [15, 2, 3],
-#     [5, 14, 1],
-#     [9, 5, 6],
-#     [7, 1, 12],
-#     [2, 0, 18],
-#     [8, 7, 5],
-#     [2, 12, 6],
-#     [2, 2, 16],
-#     [8, 1, 11],
-#     [11, 0, 9],
-# ]
-
-# print(month_twelve_revenue(allocations))
